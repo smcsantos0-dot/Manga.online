@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
 
-/* DESIGNER GLOBAL*/
+/* GLOBAL */
 * {
-    box-sizing: border-box; /* Aumenta a altura e a largura da caixa de elementos*/
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    font-family: Segoe UI, Tahoma, 'Geneva', Verdana, sans-serif;
-    background-color: #121212; /* Muda a cor do fundo*/
-    color: #ffff;/* Muda a cor da letra*/
+body {
+    font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,135 +18,140 @@ body{
     padding: 20px;
 }
 
-/*Cabeçalho*/
+/* CABEÇALHO */
 .header {
+    width: 100%;
+    max-width: 700px;
     text-align: center;
     margin-bottom: 20px;
 }
 
-.h1 {
-    font-family: 'Bungee', sans-serif;
-    font-size: 1.8rem;/*REM - Unidade de medida relativa, perfeita para sites responsivos*/
-    color: #15500a;/* Mudar a cor de texto*/
-    font-style: normal;
-}
-
 .banner-container {
+    width: 100%;
     border-radius: 8px;
     overflow: hidden;
-    display: flex;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
-.reader-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 700px;
+.banner-container img {
     width: 100%;
-}
-
-.page-wrapper{
-    background-color: #1e1e1e;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-    width: 100%;
-}
-
-.page-wrapper img {
-    max-width: 100%;
     height: auto;
     display: block;
 }
 
-.controls{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.h1 {
+    font-family: 'Bungee', sans-serif;
+    font-size: 1.8rem;
+    color: #15500a;
+}
+
+/* LEITOR */
+.reader-container {
     width: 100%;
-    max-width: 400px;
-    gap: 15px;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-wrapper {
+    width: 100%;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.page-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* CONTROLES */
+.controls {
+    width: 100%;
+    max-width: 500px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 10px;
+}
+
+.page-counter {
+    text-align: center;
+    font-size: 1rem;
 }
 
 .btn {
     background-color: #15500a;
     color: #121212;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 20px;
+    border-radius: 5px;
     font-size: 1rem;
     font-weight: bold;
-    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.1s ease;
+    transition: 0.2s;
+}
+
+.btn:first-child {
+    justify-self: start;
+}
+
+.btn:last-child {
+    justify-self: end;
 }
 
 .btn:hover {
-    background-color: #e67e22;
+    background-color: #1d6f0d;
 }
 
 .btn:active {
-    transform:scale(0.98);
+    transform: scale(0.98);
 }
 
-.btn:disabled {
-    background-color: #444;
-    color: #888;
-    cursor: not-allowed;
-}
-
-.page-counter {
-    font-size: 1rem;
-    font-weight: 500;
-}
-
+/* TABLETS */
 @media (max-width: 768px) {
-    
+
     body {
         padding: 10px;
     }
-    
+
     .h1 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     .controls {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .btn {
-        flex: 1;
-        min-width: 120px;
-        padding: 12px;
-        font-size: 0.95rem;
+        grid-template-columns: 1fr;
     }
 
     .page-counter {
-        width: 100%;
-        text-align: center;
-        order: -1;
-    }
-}
-
-/*Celulares Pequenos*/
-@media (max-width: 480px) {
-    .h1{
-        font-size: 1rem;
+        order: 1;
+        margin-bottom: 10px;
     }
 
     .btn {
-        font-size: 0.85rem;
-        padding: 10px;
+        width: 100%;
+        max-width: 250px;
+        justify-self: center;
+    }
+}
+
+/* CELULARES */
+@media (max-width: 480px) {
+
+    .h1 {
+        font-size: 1rem;
     }
 
-    .page-counter{
-        font-size: 0.85rem;
+    .page-counter {
+        font-size: 0.9rem;
     }
-    
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
 }
