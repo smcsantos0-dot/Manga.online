@@ -1,0 +1,57 @@
+// Variaveis:
+
+// Interges - Int
+let idade = 38
+
+// Strings - Str
+const nome = "Samuel"
+
+// Boolean - Bool
+ let logado = true
+
+// Arrays e Objetos:
+let time7 = [
+    "Sasuke",
+    "Naruto",
+    "Sakura",
+    "Minato",
+    "Kakashi",
+    "Obito",
+]
+
+let personagem = {
+    nome:"Tsunatde",
+    idade: 50,
+    forca: 300,
+    elaEHokage: true,
+}
+
+console.log(personagem.idade)
+
+
+//Funções e Metodos e como funciona
+function somar (a, b) {
+    let resultado = a + b;
+    return resultado
+}
+
+let x = somar (15, 38)
+
+
+//Arrow Function
+let sub = (a, b)=>{
+    let resultado = a - b
+    return resultado
+}
+let y = sub (250, 100)
+
+console.log(y)
+
+//Condicionais - Verdadeiro ou Falso, sempre que o usuario fizer algo, faça isto,
+//se não faça aquilo
+if (idade >=18) {
+    console.log("Muito bom! Pode entrar")
+} else {
+    console.log("Você não pode entrar!")
+}
+ 
